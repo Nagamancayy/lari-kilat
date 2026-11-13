@@ -1,0 +1,45 @@
+{
+  "id": 2,
+  "name": "Lereng Goyang",
+  "hint": "Hindari duri, pakai pegas untuk lompat tinggi.",
+  "theme": "dusk",
+  "width": 3800,
+  "height": 720,
+  "background": "assets/sky-dusk.svg",
+  "tileset": "assets/tiles.svg",
+  "spawn": { "x": 90, "y": 610 },
+  "checkpoint": { "x": 2500, "y": 610 },
+  "goal": { "x": 3650, "y": 500, "width": 56, "height": 110 },
+  "platforms": [
+    { "x": 0, "y": 610, "width": 760, "height": 110 },
+    { "x": 900, "y": 610, "width": 600, "height": 110 },
+    { "x": 1680, "y": 610, "width": 580, "height": 110 },
+    { "x": 2440, "y": 610, "width": 640, "height": 110 },
+    { "x": 3240, "y": 610, "width": 560, "height": 110 },
+    { "x": 430, "y": 500, "width": 130, "height": 24 },
+    { "x": 1080, "y": 480, "width": 120, "height": 24 },
+    { "x": 1540, "y": 520, "width": 100, "height": 24 },
+    { "x": 1900, "y": 460, "width": 110, "height": 24 },
+    { "x": 2660, "y": 480, "width": 120, "height": 24 },
+    { "x": 2910, "y": 370, "width": 100, "height": 24 }
+  ],
+  "coins": [
+    { "x": 495, "y": 450, "value": 100 },
+    { "x": 1140, "y": 430, "value": 100 },
+    { "x": 1590, "y": 470, "value": 100 },
+    { "x": 1955, "y": 410, "value": 100 },
+    { "x": 2720, "y": 430, "value": 100 },
+    { "x": 2960, "y": 320, "value": 100 },
+    { "x": 3350, "y": 520, "value": 100 }
+  ],
+  "spikes": [
+    { "x": 600, "y": 586, "width": 96, "height": 24 },
+    { "x": 1180, "y": 586, "width": 90, "height": 24 },
+    { "x": 2750, "y": 586, "width": 90, "height": 24 },
+    { "x": 3400, "y": 586, "width": 80, "height": 24 }
+  ],
+  "springs": [
+    { "x": 980, "y": 594, "width": 64, "height": 16, "power": 1200 },
+    { "x": 3300, "y": 594, "width": 64, "height": 16, "power": 1200 }
+  ]
+}

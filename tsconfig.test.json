@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "strict": true,
+    "skipLibCheck": true,
+    "noEmit": false,
+    "outDir": ".test-build",
+    "rootDir": ".",
+    "allowJs": true,
+    "checkJs": false,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "types": ["node"]
+  },
+  "include": ["lib/game/types.ts", "lib/game/levels.ts", "lib/game/physics.ts", "lib/game/score.ts", "lib/game/storage.ts", "tests/**/*.mjs"]
+}
