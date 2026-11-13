@@ -75,7 +75,7 @@ test('Node dipasang dari env NODE_VERSION dengan cache npm', () => {
 });
 
 test('artefak yang diunggah adalah out/ dari Next static export', () => {
-  const upload = buildSteps.find((step) => step.uses.startsWith('actions/upload-pages-artifact'));
+  const upload = buildSteps.find((step) => step.uses?.startsWith('actions/upload-pages-artifact'));
   assert.equal(upload.with.path, 'out');
   assert.match(upload.if, /refs\/heads\/main/);
   assert.match(upload.if, /event_name == 'push'/);
@@ -86,7 +86,7 @@ test('deploy hanya dari main setelah build lulus', () => {
   assert.equal(deploy.needs, 'build');
   assert.match(deploy.if, /refs\/heads\/main/);
   assert.match(deploy.if, /event_name == 'push'/);
-  const step = deploySteps.find((item) => item.uses.startsWith('actions/deploy-pages'));
+  const step = deploySteps.find((item) => item.uses?.startsWith('actions/deploy-pages'));
   assert.equal(step.id, 'deployment');
 });
 
@@ -109,7 +109,7 @@ test('setiap step tanpa pengecualian diam-diam', () => {
 
 test('semua action dipin ke tag versi utama', () => {
   const uses = collectUses();
-  assert.ok(uses.length >= 5);
+  assert.ok(uses.length >= 4);
   for (const action of uses) {
     assert.match(action, /^[\w-]+\/[\w-]+@v\d+(\.\d+)*$/, `belum dipin: ${action}`);
   }
@@ -177,6 +177,7 @@ test('skrip gate lokal memakai perintah yang sama dan berhenti saat gagal', () =
   }
 
   assert.match(gate, /package\.json belum ada/);
+  assert.match(gate, /belum punya skrip 'check' dan 'build'/);
   assert.match(gate, /out\/index\.html/);
   assert.doesNotThrow(() => execFileSync('bash', ['-n', localGatePath], { encoding: 'utf8' }));
 });

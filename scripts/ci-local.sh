@@ -7,6 +7,11 @@ if [ ! -f package.json ]; then
   exit 1
 fi
 
+if ! node -e "const p = require('./package.json'); process.exit(p.scripts && p.scripts.check && p.scripts.build ? 0 : 1)"; then
+  echo "GAGAL: package.json belum punya skrip 'check' dan 'build' (milik Ravi)." >&2
+  exit 1
+fi
+
 if [ ! -f package-lock.json ]; then
   echo "GAGAL: package-lock.json belum ada. npm ci butuh lockfile." >&2
   exit 1
