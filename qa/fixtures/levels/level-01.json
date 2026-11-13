@@ -1,0 +1,19 @@
+{
+  "id": 1,
+  "name": "Lereng Batu",
+  "width": 1600,
+  "height": 720,
+  "spawn": { "x": 80, "y": 600 },
+  "goal": { "x": 1500, "y": 560 },
+  "platforms": [
+    { "x": 0, "y": 660, "width": 1600, "height": 60 },
+    { "x": 420, "y": 520, "width": 180, "height": 24 },
+    { "x": 900, "y": 460, "width": 140, "height": 24 }
+  ],
+  "coins": [
+    { "x": 470, "y": 490, "value": 10 },
+    { "x": 950, "y": 430, "value": 10 }
+  ],
+  "background": "assets/sky.svg",
+  "tileset": "assets/tile.svg"
+}

@@ -1,0 +1,16 @@
+{
+  "id": 2,
+  "name": "Gua Bara",
+  "width": 1280,
+  "height": 720,
+  "spawn": { "x": 60, "y": 620 },
+  "goal": { "x": 1200, "y": 300 },
+  "platforms": [
+    { "x": 0, "y": 680, "width": 1280, "height": 40 },
+    { "x": 300, "y": 560, "width": 120, "height": 20 },
+    { "x": 700, "y": 440, "width": 120, "height": 20 }
+  ],
+  "coins": [{ "x": 340, "y": 530, "value": 25 }],
+  "background": "assets/sky.svg",
+  "tileset": "assets/tile.svg"
+}
