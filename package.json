@@ -1,0 +1,9 @@
+{
+  "name": "platformer-2d-qa",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Pemeriksa tabel test case manual v1. Bergabung ke package.json build Ravi saat tersedia.",
+  "scripts": {
+    "test": "node --test qa/"
+  }
+}
