@@ -1,9 +1,9 @@
-import { GameAudio } from "./audio.js";
-import { createGameState, hudSnapshot, restartGame, stepGame } from "./physics.js";
-import { renderScene, VIEW_HEIGHT, VIEW_WIDTH, type Floater, type SceneParticle } from "./render.js";
-import { computeScore } from "./score.js";
-import type { GameAssets } from "./assets.js";
-import type { GameEvent, GameState, HudSnapshot, Level, RunResult, StepInput } from "./types.js";
+import { GameAudio } from "./audio.ts";
+import { createGameState, hudSnapshot, restartGame, stepGame } from "./physics.ts";
+import { renderScene, VIEW_HEIGHT, VIEW_WIDTH, type Floater, type SceneParticle } from "./render.ts";
+import { computeScore } from "./score.ts";
+import type { GameAssets } from "./assets.ts";
+import type { GameEvent, GameState, HudSnapshot, Level, RunResult, StepInput } from "./types.ts";
 
 const FIXED_STEP = 1 / 60;
 
