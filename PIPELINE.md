@@ -37,7 +37,7 @@ assetPrefix: process.env.NEXT_PUBLIC_BASE_PATH ?? undefined,
 
 - Situs live: https://nagamancayy.github.io/lari-kilat/
 - Repo: https://github.com/Nagamancayy/lari-kilat (publik — Pages gratis butuh repo publik)
-- Run hijau: https://github.com/Nagamancayy/lari-kilat/actions/runs/43566106096 — job `Check and build` dan `Deploy to GitHub Pages` sama-sama `success`
+- Run hijau: https://github.com/Nagamancayy/lari-kilat/actions/runs/43566284063 — job `Check and build` dan `Deploy to GitHub Pages` sama-sama `success`
 
 ## Cara membuktikan
 
