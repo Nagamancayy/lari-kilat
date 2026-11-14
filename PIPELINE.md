@@ -33,18 +33,26 @@ assetPrefix: process.env.NEXT_PUBLIC_BASE_PATH ?? undefined,
 
 `NEXT_PUBLIC_BASE_PATH` diisi workflow otomatis dari nama repo (`/<repo>`), karena Pages menyajikan project site di sub-path. Tanpa ini, game terbuka tapi aset 404.
 
+## Status deploy
+
+- Situs live: https://nagamancayy.github.io/lari-kilat/
+- Repo: https://github.com/Nagamancayy/lari-kilat (publik — Pages gratis butuh repo publik)
+- Run hijau: https://github.com/Nagamancayy/lari-kilat/actions/runs/43566106096 — job `Check and build` dan `Deploy to GitHub Pages` sama-sama `success`
+
 ## Cara membuktikan
 
 ```bash
 node --test pipeline/          # kontrak workflow + gate export
-bash scripts/ci-local.sh       # gate penuh, butuh package.json dari Ravi
+bash scripts/ci-local.sh       # gate penuh: npm ci, check, gate export, build
+gh run watch --exit-status     # pantau run terakhir sampai selesai
 ```
 
-Sekali saja di GitHub: Settings → Pages → Source = **GitHub Actions**.
+Pages sudah aktif dengan Source = **GitHub Actions**; tidak perlu klik apa pun lagi.
 
 ## Batasan
 
-- `npm ci`/`check`/`build` belum pernah dijalankan. `package.json` yang ada sekarang hanya berisi skrip tes QA (`node --test qa/`), belum `check`/`build` dari Ravi; gate lokal berhenti di pengecekan itu.
-- `act` dan `actionlint` tidak terpasang di mesin ini, jadi workflow belum dijalankan di runner sungguhan. Tes membaca YAML-nya, bukan mengeksekusinya.
-- Tag action dipin ke versi mayor (`@v4`), bukan SHA. Kalau repo dibuat publik nanti, pertimbangkan pin ke SHA penuh.
+- Gate lokal belum pernah lulus utuh: tes game/QA di `npm test` belum saya jalankan, dan `ci-local.sh` butuh `package-lock.json` yang kini sudah ada. Status terakhir: `npm run check` lulus, `npm run build` lulus dengan `NEXT_PUBLIC_BASE_PATH=/lari-kilat`.
+- Build gagal sebelum saya ubah impor `.js` → `.ts` di `lib/game/engine.ts` dan `lib/game/catalog.ts` (Turbopack). Itu file Ravi, perlu review-nya.
+- Tag action dipin ke versi mayor (`@v7`, `@v5`), bukan SHA. Kalau repo publik ini dipakai jangka panjang, pertimbangkan pin ke SHA penuh.
+- Node 22 di runner; tes lokal di mesin ini memakai Node 26.
 - Belum ada cache Playwright/e2e — belum relevan sampai tes Ivan masuk.

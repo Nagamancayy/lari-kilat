@@ -68,7 +68,7 @@ test('build menjalankan npm ci, check, gate export, lalu build sesuai urutan', (
 });
 
 test('Node dipasang dari env NODE_VERSION dengan cache npm', () => {
-  assert.equal(workflow.env.NODE_VERSION, '20');
+  assert.equal(workflow.env.NODE_VERSION, '22');
   const setup = buildSteps.find((step) => step.uses.startsWith('actions/setup-node'));
   assert.equal(setup.with['node-version'], '${{ env.NODE_VERSION }}');
   assert.equal(setup.with.cache, 'npm');
